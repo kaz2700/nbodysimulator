@@ -53,13 +53,13 @@ def tick(time):
                         1
         )
 
-        if time % (parameters.ticks_per_second) == 0:
-            pygame.draw.circle(
-                            screen,
-                            object.color,
-                            translated_position,
-                            object.radius/parameters.zoom
-            )
+        pygame.draw.circle(
+                        screen,
+                        object.color,
+                        translated_position,
+                        object.radius/parameters.zoom
+        )
+        
         #draw_shining_circle(screen, translated_position, int(object.radius/parameters.zoom))
 
         object_name = pygame.font.SysFont("", 15, False, True).render(object.name, True, "white")
@@ -83,7 +83,6 @@ while(parameters.running):
     pygame.display.flip()
 
     clock.tick(parameters.ticks_per_second)
-    #print(time/parameters.ticks_per_second)
     time +=1
 
 pygame.quit()
